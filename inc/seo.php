@@ -509,15 +509,15 @@ add_filter('pre_get_document_title', 'mohtawa_custom_document_title');
  * إضافة Sitemap XML للمتاجر
  */
 function mohtawa_add_stores_to_sitemap($provider, $name) {
-    if ('posts' !== $name) {
+    if ('posts' !== $name || !method_exists($provider, 'add_sitemap')) {
         return $provider;
     }
-    
+
     $provider->add_sitemap('stores', array(
-        'loc' => home_url('/wp-sitemap-stores.xml'),
-        'lastmod' => get_lastpostmodified('gmt', 'store')
+        'loc'     => home_url('/wp-sitemap-stores.xml'),
+        'lastmod' => get_lastpostmodified('gmt', 'store'),
     ));
-    
+
     return $provider;
 }
 add_filter('wp_sitemaps_add_provider', 'mohtawa_add_stores_to_sitemap', 10, 2);

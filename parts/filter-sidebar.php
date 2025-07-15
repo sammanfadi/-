@@ -16,9 +16,14 @@
             $categories = get_terms( array(
                 'taxonomy'   => 'store_category',
                 'hide_empty' => false,
+                'fields'     => 'all',				
             ) );
             foreach ( $categories as $category ) {
-                echo '<li><label><input type="checkbox" class="filter-checkbox" data-filter="category" value="' . esc_attr( $category->slug ) . '"> ' . esc_html( $category->name ) . '</label></li>';
+                $term = is_object( $category ) ? $category : get_term( $category, 'store_category' );
+                if ( ! $term || is_wp_error( $term ) ) {
+                    continue;
+                }
+                echo '<li><label><input type="checkbox" class="filter-checkbox" data-filter="category" value="' . esc_attr( $term->slug ) . '"> ' . esc_html( $term->name ) . '</label></li>';
             }
             ?>
         </ul>
