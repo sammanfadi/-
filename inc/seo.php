@@ -696,8 +696,9 @@ add_filter('robots_txt', 'mohtawa_custom_robots_txt');
  */
 function mohtawa_optimize_loading_speed() {
     // إزالة الإصدارات من CSS و JS
-    add_filter('style_loader_src', 'mohtawa_remove_version_strings');
-    add_filter('script_loader_src', 'mohtawa_remove_version_strings');
+    // remove version numbers from assets
+    add_filter('style_loader_src', 'mohtawa_seo_remove_version_strings');
+    add_filter('script_loader_src', 'mohtawa_seo_remove_version_strings');
     
     // تفعيل ضغط GZIP
     if (!ob_get_level()) {
@@ -715,7 +716,7 @@ add_action('init', 'mohtawa_optimize_loading_speed');
 /**
  * إزالة أرقام الإصدارات من الملفات
  */
-function mohtawa_remove_version_strings($src) {
+function mohtawa_seo_remove_version_strings($src) {
     if (strpos($src, '?ver=')) {
         $src = remove_query_arg('ver', $src);
     }

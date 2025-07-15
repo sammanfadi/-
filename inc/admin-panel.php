@@ -14,7 +14,8 @@ if (!defined("ABSPATH")) {
 /**
  * Add top-level menu page for Mohtawa Theme.
  */
-function mohtawa_add_admin_menu() {
+// renamed to avoid conflict with admin-dashboard.php
+function mohtawa_options_admin_menu() {
     add_menu_page(
         __("Mohtawa Options", "mohtawa"),
         __("Mohtawa", "mohtawa"),
@@ -25,7 +26,7 @@ function mohtawa_add_admin_menu() {
         6
     );
 }
-add_action("admin_menu", "mohtawa_add_admin_menu");
+add_action("admin_menu", "mohtawa_options_admin_menu");
 
 /**
  * Display the Mohtawa options page HTML.

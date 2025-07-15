@@ -981,7 +981,8 @@ add_action('admin_enqueue_scripts', 'mohtawa_admin_styles');
 /**
  * إضافة سكريبت Leaflet للوحة التحكم
  */
-function mohtawa_admin_scripts($hook) {
+// load Leaflet scripts specifically for dashboard pages
+function mohtawa_dashboard_admin_scripts($hook) {
     global $post_type;
     
     if ($post_type === 'store' || strpos($hook, 'mohtawa') !== false) {
@@ -989,5 +990,5 @@ function mohtawa_admin_scripts($hook) {
         wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4');
     }
 }
-add_action('admin_enqueue_scripts', 'mohtawa_admin_scripts');
+add_action('admin_enqueue_scripts', 'mohtawa_dashboard_admin_scripts');
 

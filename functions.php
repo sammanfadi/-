@@ -4,7 +4,7 @@
  * ملف الوظائف الرئيسي
  *
  * @package Mohtawa
- * @version 1.0.0
+ * @version 1.0.1
  * @author Manus AI
  * @link https://manus.ai
  */
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 }
 
 // تعريف الثوابت الأساسية للقالب
-define('MOHTAWA_VERSION', '1.0.0');
+define('MOHTAWA_VERSION', '1.0.1');
 define('MOHTAWA_THEME_DIR', get_template_directory());
 define('MOHTAWA_THEME_URL', get_template_directory_uri());
 define('MOHTAWA_ASSETS_URL', MOHTAWA_THEME_URL . '/assets');

@@ -1470,5 +1470,13 @@
                 clear: '<?php _e('واضح', 'mohtawa'); ?>',
                 unclear: '<?php _e('غير واضح', 'mohtawa'); ?>',
                 vague: '<?php _e('غامض', 'mohtawa'); ?>',
-                ambiguous: '<?php _e('غامض', 'mohtawa
+                ambiguous: '<?php _e('غامض', 'mohtawa'); ?>'
+            }
+        };
+    </script>
+
+    <?php wp_footer(); ?>
+</body>
+</html>
+
 
