@@ -710,10 +710,12 @@ add_action('init', 'mohtawa_optimize_loading_speed');
  * إرسال رؤوس التخزين المؤقت مبكراً
  */
 function mohtawa_send_cache_headers() {
-    if (!is_admin()) {
-        header('Cache-Control: public, max-age=31536000');
-        header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 31536000) . ' GMT');
+    if (is_admin() || headers_sent()) {
+        return;
     }
+
+    header('Cache-Control: public, max-age=31536000');
+    header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 31536000) . ' GMT');
 }
 add_action('send_headers', 'mohtawa_send_cache_headers');
 
