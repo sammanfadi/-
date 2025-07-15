@@ -703,14 +703,19 @@ function mohtawa_optimize_loading_speed() {
     if (!ob_get_level()) {
         ob_start('ob_gzhandler');
     }
+}
+add_action('init', 'mohtawa_optimize_loading_speed');
 
-    // إضافة رؤوس التخزين المؤقت في وقت مبكر لمنع تحذيرات الرؤوس
+/**
+ * إرسال رؤوس التخزين المؤقت مبكراً
+ */
+function mohtawa_send_cache_headers() {
     if (!is_admin()) {
         header('Cache-Control: public, max-age=31536000');
         header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 31536000) . ' GMT');
     }
 }
-add_action('init', 'mohtawa_optimize_loading_speed');
+add_action('send_headers', 'mohtawa_send_cache_headers');
 
 
 /**
