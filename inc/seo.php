@@ -717,7 +717,7 @@ function mohtawa_send_cache_headers() {
     header('Cache-Control: public, max-age=31536000');
     header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 31536000) . ' GMT');
 }
-add_action('send_headers', 'mohtawa_send_cache_headers');
+add_action('init', 'mohtawa_send_cache_headers', 0);
 
 
 /**
