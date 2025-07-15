@@ -696,28 +696,22 @@ add_filter('robots_txt', 'mohtawa_custom_robots_txt');
  */
 function mohtawa_optimize_loading_speed() {
     // إزالة الإصدارات من CSS و JS
-    // remove version numbers from assets
     add_filter('style_loader_src', 'mohtawa_seo_remove_version_strings');
     add_filter('script_loader_src', 'mohtawa_seo_remove_version_strings');
-    
+
     // تفعيل ضغط GZIP
     if (!ob_get_level()) {
         ob_start('ob_gzhandler');
     }
-    
-}
-add_action('init', 'mohtawa_optimize_loading_speed');
 
-/**
- * إرسال رؤوس التخزين المؤقت قبل إخراج المحتوى
- */
-function mohtawa_send_cache_headers() {
+    // إضافة رؤوس التخزين المؤقت في وقت مبكر لمنع تحذيرات الرؤوس
     if (!is_admin()) {
         header('Cache-Control: public, max-age=31536000');
         header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 31536000) . ' GMT');
     }
 }
-add_action('send_headers', 'mohtawa_send_cache_headers');
+add_action('init', 'mohtawa_optimize_loading_speed');
+
 
 /**
  * إزالة أرقام الإصدارات من الملفات
