@@ -1,0 +1,166 @@
+
+/*
+ * Mohtawa Theme Responsive Styles
+ */
+
+/* General Responsive Adjustments */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .main-navigation {
+        display: none; /* Switch to mobile menu */
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-branding {
+        margin-bottom: 15px;
+    }
+
+    .map-container {
+        height: 400px;
+    }
+
+    .store-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-widgets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    .store-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .store-card {
+        flex-direction: column;
+    }
+
+    .store-card-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .store-card-content {
+        padding: 15px;
+    }
+
+    .filter-sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: #fff;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-sidebar.open {
+        left: 0;
+    }
+
+    .footer-widgets {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    .site-description {
+        font-size: 14px;
+    }
+
+    .store-single-header h1 {
+        font-size: 28px;
+    }
+
+    .store-single-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .store-single-meta > div {
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile Menu Styles */
+.mobile-navigation {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    padding: 20px;
+    text-align: center;
+}
+
+.mobile-navigation.open {
+    display: block;
+}
+
+.mobile-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-navigation li {
+    margin-bottom: 20px;
+}
+
+.mobile-navigation a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+

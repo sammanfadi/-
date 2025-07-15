@@ -1,0 +1,145 @@
+/*
+ * Mohtawa Theme Admin Styles
+ */
+
+/* General Admin Styles */
+.mohtawa-admin-page {
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.mohtawa-admin-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.mohtawa-admin-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Form Elements */
+.mohtawa-admin-form-group {
+    margin-bottom: 15px;
+}
+
+.mohtawa-admin-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.mohtawa-admin-form-group input[type="text"],
+.mohtawa-admin-form-group input[type="email"],
+.mohtawa-admin-form-group input[type="url"],
+.mohtawa-admin-form-group input[type="number"],
+.mohtawa-admin-form-group textarea,
+.mohtawa-admin-form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.mohtawa-admin-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.mohtawa-admin-button {
+    background-color: #0073aa;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.mohtawa-admin-button:hover {
+    background-color: #005177;
+}
+
+/* Table Styles */
+.mohtawa-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.mohtawa-admin-table th,
+.mohtawa-admin-table td {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: left;
+}
+
+.mohtawa-admin-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Alerts and Messages */
+.mohtawa-admin-notice {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.mohtawa-admin-notice.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border-color: #d6e9c6;
+}
+
+.mohtawa-admin-notice.error {
+    background-color: #f2dede;
+    color: #a94442;
+    border-color: #ebccd1;
+}
+
+/* Media Uploader */
+.mohtawa-media-upload-button {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.mohtawa-image-preview {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .mohtawa-admin-page {
+        padding: 10px;
+    }
+
+    .mohtawa-admin-card {
+        padding: 15px;
+    }
+
+    .mohtawa-admin-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
