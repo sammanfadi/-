@@ -705,13 +705,19 @@ function mohtawa_optimize_loading_speed() {
         ob_start('ob_gzhandler');
     }
     
-    // إضافة Cache Headers
+}
+add_action('init', 'mohtawa_optimize_loading_speed');
+
+/**
+ * إرسال رؤوس التخزين المؤقت قبل إخراج المحتوى
+ */
+function mohtawa_send_cache_headers() {
     if (!is_admin()) {
         header('Cache-Control: public, max-age=31536000');
         header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 31536000) . ' GMT');
     }
 }
-add_action('init', 'mohtawa_optimize_loading_speed');
+add_action('send_headers', 'mohtawa_send_cache_headers');
 
 /**
  * إزالة أرقام الإصدارات من الملفات

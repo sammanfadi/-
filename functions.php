@@ -642,9 +642,18 @@ add_filter('login_errors', 'mohtawa_custom_login_errors');
  * إضافة دعم للتحديثات التلقائية
  */
 function mohtawa_enable_auto_updates($update, $item) {
-    if ($item->slug === 'mohtawa') {
+    if (is_object($item) && property_exists($item, 'slug')) {
+        $slug = $item->slug;
+    } elseif (is_array($item) && isset($item['slug'])) {
+        $slug = $item['slug'];
+    } else {
+        $slug = '';
+    }
+
+    if ($slug === 'mohtawa') {
         return true;
     }
+
     return $update;
 }
 add_filter('auto_update_theme', 'mohtawa_enable_auto_updates', 10, 2);
